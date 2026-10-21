@@ -1,6 +1,6 @@
 # Lilloweb skill
 
-A portable [Agent Skill](https://agentskills.io/specification) for using the [Lilloweb browser](https://github.com/YOUR-GITHUB-NAME/YOUR-BROWSER-REPO) through its existing MCP tools. It teaches an agent to pick the right tab, inspect fresh page state, act through live locators, and verify the result. Focused references cover forms, isolated sessions, debugging, responsive checks, and safe workspace mocking.
+A portable [Agent Skill](https://agentskills.io/specification) for using the Lilloweb browser through its existing MCP tools. It teaches an agent to pick the right tab, inspect fresh page state, act through live locators, and verify the result. Focused references cover forms, isolated sessions, debugging, responsive checks, and safe workspace mocking.
 
 The package is Markdown instructions. It does not install Lilloweb, replace its MCP server, or automatically modify agent configuration or permissions.
 
@@ -9,19 +9,19 @@ The package is Markdown instructions. It does not install Lilloweb, replace its 
 Run from the project where you want the skill available, and select your agent interactively:
 
 ```sh
-npx skills add YOUR-GITHUB-NAME/lilloweb-skill --skill lilloweb
+npx skills add gnobob/lilloweb-skill --skill lilloweb
 ```
 
 Or select one explicitly, for example Codex:
 
 ```sh
-npx skills add YOUR-GITHUB-NAME/lilloweb-skill --skill lilloweb --agent codex
+npx skills add gnobob/lilloweb-skill --skill lilloweb --agent codex
 ```
 
 Replace `codex` with the appropriate installer ID below. Choose multiple IDs only if you want the skill installed for each of those agents. Preview repository discovery without installing:
 
 ```sh
-npx skills add YOUR-GITHUB-NAME/lilloweb-skill --list
+npx skills add gnobob/lilloweb-skill --list
 ```
 
 These use the [Vercel skills installer](https://github.com/vercel-labs/skills). Project installation avoids differences between global skill directories. The installer can create links from an agent's directory to the shared project skill; check its summary and the destination `SKILL.md`, then reload skills or start a new agent session as your client requires.
@@ -76,7 +76,7 @@ skills/lilloweb/
     debugging.md            Diagnostics, snapshots, emulation, and mock rules
 ```
 
-The skill uses the server's live schemas as the runtime authority. Its examples came from the upstream [dive-skill](https://github.com/ronaldxdale09/dive-skill), which was written against Dive's MCP tools. On 2026-10-18 every tool name it mentions was checked against Lilloweb's [MCP tools](https://github.com/YOUR-GITHUB-NAME/YOUR-BROWSER-REPO/blob/main/crates/dive-mcp/src/server.rs); the one that changed is `lilloweb_capabilities` (it was `dive_capabilities`). That was a read of the source, not a browser run. Argument shapes and the [locator grammar](https://github.com/YOUR-GITHUB-NAME/YOUR-BROWSER-REPO/blob/main/crates/dive-mcp/src/params.rs) are as upstream described them, and the [HTTP transport](https://github.com/YOUR-GITHUB-NAME/YOUR-BROWSER-REPO/blob/main/crates/dive-mcp/src/http.rs) lives beside them. Live capabilities may differ between builds.
+The skill uses the server's live schemas as the runtime authority. Its examples came from the upstream [dive-skill](https://github.com/ronaldxdale09/dive-skill), which was written against Dive's MCP tools. On 2026-10-18 every tool name it mentions was checked against Lilloweb's MCP tools (`crates/dive-mcp/src/server.rs` in the Lilloweb source); the one that changed is `lilloweb_capabilities` (it was `dive_capabilities`). That was a read of the source, not a browser run. Argument shapes and the locator grammar (`crates/dive-mcp/src/params.rs` in the Lilloweb source) are as upstream described them, and the HTTP transport (`crates/dive-mcp/src/http.rs` in the Lilloweb source) lives beside them. Live capabilities may differ between builds.
 
 ### Validation boundaries
 

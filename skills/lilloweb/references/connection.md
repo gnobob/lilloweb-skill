@@ -31,4 +31,4 @@ Once connected, discover the tools and call `lilloweb_capabilities`, then `tabs_
 | Tool or argument rejected | Read the live schema; use its exact argument names. `tab_id` is not `id`. Refresh discovery after a browser upgrade or reconnect. |
 | Evaluation refused | Respect the capability flag. Use the dedicated page tool or describe the missing capability. |
 
-Configuration authority: [Lilloweb MCP transport](https://github.com/YOUR-GITHUB-NAME/YOUR-BROWSER-REPO/blob/main/crates/dive-mcp/src/http.rs), [Connect dialog](https://github.com/YOUR-GITHUB-NAME/YOUR-BROWSER-REPO/blob/main/apps/desktop/src/components/McpDialog.tsx).
+Configuration authority: Lilloweb MCP transport (`crates/dive-mcp/src/http.rs` in the Lilloweb source), Connect dialog (`apps/desktop/src/components/McpDialog.tsx` in the Lilloweb source).
